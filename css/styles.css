@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-[data-theme="ligth"] {
+[data-theme="light"] {
     --white: rgb(34, 34, 34);
     --dark: rgb(197, 194, 194);
     --textDark: #000;

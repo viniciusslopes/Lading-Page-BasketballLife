@@ -3,7 +3,7 @@ const themeSystem = localStorage.getItem("themeSystem") || "dark";
 
 btnDarkMode.addEventListener("click", () => {
     let oldTheme = localStorage.getItem("themeSystem") || "dark";
-    let newTheme = oldTheme == "ligth" ? "dark" : "ligth";
+    let newTheme = oldTheme == "light" ? "dark" : "light";
 
     localStorage.setItem("themeSystem", newTheme);
     defineCurrentTheme(newTheme);
@@ -15,7 +15,7 @@ function defineCurrentTheme(theme) {
 
 
     document.documentElement.setAttribute("data-theme", theme);
-    if (theme == "ligth") {
+    if (theme == "light") {
         btnDarkMode.innerHTML = darkimg
         btnDarkMode.classList.remove("icon-dark");
 
