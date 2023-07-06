@@ -54,7 +54,18 @@ form.onsubmit = (event) => {
 
 
 btnForm.onclick = () => {
-    validate();
+    checkInputName();
+    checkInputEmail();
+
+    if (checkInputName() === true) {
+        hiderMessageError(userName);
+    };
+    if (checkInputEmail() === true) {
+        hiderMessageError(userEmail);
+    };
+    if (checkInputEmail() && checkInputName() === true) {
+        validate();
+    };
 };
 
 
@@ -109,14 +120,9 @@ const hiderMessageError = (input) => {
 
 
 function validate() {
-    checkInputName();
-    checkInputEmail();
-    if (checkInputName() === true) {
-        hiderMessageError(userName);
-    };
-    if (checkInputEmail() === true) {
-        hiderMessageError(userEmail);
-    };
+    userName.value = "";
+    userEmail.value = ""
+    alert("sua inscrição foi feita com sucesso");
 };
 
 
