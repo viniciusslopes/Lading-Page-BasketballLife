@@ -41,3 +41,87 @@ function menuShow() {
 };
 
 menuBtn.onclick = () => menuShow();
+
+
+const btnForm = document.getElementById("btn-submit");
+const form = document.querySelector("form");
+const userName = document.getElementById("user-name");
+const userEmail = document.getElementById("user-email");
+
+form.onsubmit = (event) => {
+    event.preventDefault();
+};
+
+
+btnForm.onclick = () => {
+    validate();
+};
+
+
+const checkInputName = () => {
+    const userNameValue = userName.value;
+
+    if (userNameValue === "") {
+        showMessageError(userName, "Preencha o campo acima com seu nome");
+        return false;
+    };
+    return true;
+};
+
+
+const checkInputEmail = () => {
+    const userEmailValue = userEmail.value;
+
+    if (userEmailValue === "") {
+        showMessageError(userEmail, "Preencha o campo acima com seu email")
+        return false
+    }
+    if (!maskEmail(userEmailValue)) {
+        showMessageError(userEmail, "Informe um email válido");
+        return false
+    }
+    return true;
+};
+
+
+const showMessageError = (input, text) => {
+
+    const formItem = input.parentElement;
+    const textMessage = formItem.querySelector("p");
+
+    textMessage.innerText = text;
+    formItem.className = "user-form-content error";
+    textMessage.style.display = "flex";
+
+    return textMessage;
+};
+
+
+const hiderMessageError = (input) => {
+    const formItem = input.parentElement;
+    const textMessage = formItem.querySelector("p");
+
+    formItem.className = "user-form-content";
+    textMessage.style.display = "none";
+
+    return textMessage;
+};
+
+
+function validate() {
+    checkInputName();
+    checkInputEmail();
+
+    if (checkInputName() === true) {
+        hiderMessageError(userName);
+    };
+    if (checkInputEmail() === true) {
+        hiderMessageError(userEmail);
+    };
+};
+
+
+const maskEmail = (email) => {
+    let referencia = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return referencia.test(email);
+};
