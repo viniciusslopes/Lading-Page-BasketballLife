@@ -1,1 +1,1 @@
-# Lading-Page-BasketballLife
+# Landing-Page-BasketballLife
