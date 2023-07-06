@@ -111,18 +111,12 @@ const hiderMessageError = (input) => {
 function validate() {
     checkInputName();
     checkInputEmail();
-
     if (checkInputName() === true) {
         hiderMessageError(userName);
     };
     if (checkInputEmail() === true) {
         hiderMessageError(userEmail);
     };
-    if (checkInputEmail() && checkInputEmail() === true) {
-        userEmail.value = "";
-        userName.value = "";
-        alert("Sua inscrição foi criada com sucesso");
-    }
 };
 
 
