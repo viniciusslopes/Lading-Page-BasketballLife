@@ -118,6 +118,11 @@ function validate() {
     if (checkInputEmail() === true) {
         hiderMessageError(userEmail);
     };
+    if (checkInputEmail() && checkInputEmail() === true) {
+        userEmail.value = "";
+        userName.value = "";
+        alert("Sua inscrição foi criada com sucesso");
+    }
 };
 
 
