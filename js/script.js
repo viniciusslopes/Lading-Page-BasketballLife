@@ -29,8 +29,8 @@ function defineCurrentTheme(theme) {
 defineCurrentTheme(themeSystem);
 
 
-let ul = document.querySelector("nav ul");
-let menuBtn = document.querySelector(".menu-btn img");
+const ul = document.querySelector("nav ul");
+const menuBtn = document.querySelector(".menu-btn img");
 
 function menuShow() {
     if (ul.classList.contains('open')) {
@@ -47,6 +47,21 @@ const btnForm = document.getElementById("btn-submit");
 const form = document.querySelector("form");
 const userName = document.getElementById("user-name");
 const userEmail = document.getElementById("user-email");
+const modal = document.getElementById("content-pop-up");
+
+
+const showModal = () => {
+    const closeModal = document.getElementById("close-modal");
+
+    modal.style.display = "flex";
+
+    closeModal.onclick = () => {
+        modal.style.display = "none";
+        userName.value = "";
+        userEmail.value = ""
+    };
+
+};
 
 form.onsubmit = (event) => {
     event.preventDefault();
@@ -120,9 +135,8 @@ const hiderMessageError = (input) => {
 
 
 function validate() {
-    userName.value = "";
-    userEmail.value = ""
-    alert("sua inscrição foi feita com sucesso");
+
+    showModal();
 };
 
 

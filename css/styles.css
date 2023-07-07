@@ -29,9 +29,59 @@ body {
     margin: 0 auto;
     padding: 15px;
     transition: background 0.7s linear;
+    align-items: center;
 
 }
 
+.content-pop-up {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pop-up {
+    width: 50%;
+    height: 30%;
+    margin: 0 auto;
+    padding: 45px;
+    border-radius: 20px;
+    background: #111111c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pop-up h3 {
+    font-family: 'Fira Sans', sans-serif;
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+    color: #FFF;
+}
+
+
+
+.pop-up button {
+    width: 50%;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    color: #00000086;
+    /* background-color: ; */
+    margin-top: 20px;
+    font-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up button:hover {
+    color: #000;
+    cursor: pointer;
+}
 
 header {
     display: flex;
@@ -257,7 +307,7 @@ form {
     color: #FFF;
 }
 
-.user-form-content{
+.user-form-content {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -274,11 +324,11 @@ form {
     margin-top: 10px;
 }
 
-.user-form-content.error input{
+.user-form-content.error input {
     border-color: #ff3b25;
 }
 
-.user-form-content.error p{
+.user-form-content.error p {
     color: #ff3b25;
 }
 
