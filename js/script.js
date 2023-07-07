@@ -61,7 +61,6 @@ const showModal = () => {
         userEmail.value = "";
         userName.disabled = false;
         userEmail.disabled = false;
-        
     };
 
 };
