@@ -51,11 +51,18 @@ const modal = document.getElementById("content-pop-up");
 
 
 const showModal = () => {
-    const closeModal = document.getElementById("close-modal");
+    const finalizeRegister = document.getElementById("finalize-register");
+    const closeModal = document.getElementById("btn-close-modal");
 
     modal.style.display = "flex";
 
     closeModal.onclick = () => {
+        modal.style.display = "none";
+        userName.disabled = false;
+        userEmail.disabled = false;
+    };
+
+    finalizeRegister.onclick = () => {
         modal.style.display = "none";
         userName.value = "";
         userEmail.value = "";
