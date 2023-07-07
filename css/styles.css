@@ -29,8 +29,6 @@ body {
     margin: 0 auto;
     padding: 15px;
     transition: background 0.7s linear;
-    align-items: center;
-
 }
 
 .content-pop-up {
@@ -39,12 +37,11 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+
 }
 
 .pop-up {
     width: 50%;
-    height: 30%;
-    margin: 0 auto;
     padding: 45px;
     border-radius: 20px;
     background: #111111c7;

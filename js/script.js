@@ -58,7 +58,10 @@ const showModal = () => {
     closeModal.onclick = () => {
         modal.style.display = "none";
         userName.value = "";
-        userEmail.value = ""
+        userEmail.value = "";
+        userName.disabled = false;
+        userEmail.disabled = false;
+        
     };
 
 };
@@ -135,8 +138,10 @@ const hiderMessageError = (input) => {
 
 
 function validate() {
-
+    userName.disabled = true;
+    userEmail.disabled = true;
     showModal();
+
 };
 
 
